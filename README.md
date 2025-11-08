@@ -1,7 +1,22 @@
 # 🚦 Traffic Event System
 
-This project consists of a **GraphQL API (Backend)** for managing vehicle event data and a **React Dashboard (Frontend)** for visualization.
 
+
+##  architecture
+
+The system is composed of two main backend services and a frontend:
+
+1.  **Ingestor Service  :**
+     A lightweight Node.js service.
+    * **Role:**  Listens for incoming JSON payloads from cameras..
+    * **Action:** Transforms JSON into a GraphQL mutation and forwards it to the Main API.
+ 
+2.  **GraphQL API:**
+     A Node.js (Express) server that runs the main business logic.
+    * **Role:**  Serves the React frontend and handles all data queries/mutations.
+    * **Action:** Connects to a PostgreSQL database (via TypeORM) for persistent storage.
+3.  **React Dashboard (The "Frontend"):**
+    * A React app (e.g., on port 3000) that consumes the GraphQL API..
 ---
 ### Data Flow
 
