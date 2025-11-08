@@ -23,7 +23,7 @@ const GET_AGGREGATES = gql`
   }
 `;
 
-// A small component for each stat card
+
 function StatCard({ title, value, icon, unit = "" }) {
   return (
     <Card sx={{ display: 'flex', alignItems: 'center', p: 2 }}>

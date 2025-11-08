@@ -62,17 +62,11 @@ async function getVehicles(entity, first = 5, after) {
 async function getVehicleByPlate(entity, vehiclePlate) {
     const db = await initDB();
     const repo = db.getRepository(entity);
-    // if (vehiclePlate == "886B04") {
-    //     console.log("cheger ale");
-    // }
     const events = await repo.find({
         where: { vehiclePlate },
         relations: ["camera"],
         order: { timestamp: "DESC" },
     });
-    console.log(events);
-
-    // This log should be *after* the query to see the results
     return events;
 }
 
@@ -91,8 +85,6 @@ async function getCameraById(entity, cameraid) {
 async function getAggregates(entity) {
     const db = await initDB();
     const repo = db.getRepository(entity);
-
-    // const events = await repo.find();
     const totalEvents = await repo.count();
     const avg = await repo
         .createQueryBuilder("event")

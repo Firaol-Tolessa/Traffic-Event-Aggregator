@@ -100,7 +100,7 @@ const resolvers = {
     },
     Event: {
         camera: (parent) => {
-            return parent.camera; // already loaded by leftJoinAndSelect
+            return parent.camera; 
         },
     },
 

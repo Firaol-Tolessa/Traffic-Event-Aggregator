@@ -3,8 +3,8 @@ import Aggregates from "./components/Aggregates";
 import VehicleByPlate from "./components/VehicleByPlate";
 import CameraById from "./components/CameraById";
 import EventList from "./components/EventList";
-
-// MUI Components
+import AddCameraForm from "./components/AddCamera";
+import DeleteCameraForm from "./components/DeleteCamera"
 import {
   CssBaseline,
   AppBar,
@@ -21,7 +21,7 @@ function App() {
     <>
       {/* Resets browser CSS */}
       <CssBaseline />
-      
+
       {/* Header Bar */}
       <AppBar position="static">
         <Toolbar>
@@ -35,27 +35,28 @@ function App() {
       {/* Main Content Area */}
       <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }} >
         <Box>
-          <Grid container spacing={3} justifyContent="center">
-            
-            {/* 1. Aggregates Section */}
+          <Grid container spacing={5} justifyContent="center">
             <Grid item xs={12}>
               <Aggregates />
               <Grid item xs={12} md={6}>
-              <VehicleByPlate />
+                <AddCameraForm />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <DeleteCameraForm />
+              </Grid>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <CameraById />
-            </Grid>
-            </Grid>
-
-            {/* 2. Search Section */}
             
-
-            {/* 3. Event List Section */}
+             <Grid item xs={12} md={6}>
+                <VehicleByPlate />
+              </Grid>
+             
+              <Grid item xs={12} md={6}>
+                <CameraById />
+              </Grid>
             <Grid item xs={12}>
               <EventList />
             </Grid>
-=
+            
           </Grid>
         </Box>
       </Container>
