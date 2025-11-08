@@ -1,0 +1,31 @@
+{
+  "name": "traffic-event-backend",
+  "version": "1.0.0",
+  "description": "This is the backend for the traffic event aggregator that is implemented using node and offers a GraphQL api for the front end through apollo server. It recieves the camera data vaildates the data and sends it to a postgres database while also offering an apollo server for the front end client ",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon ./src/server.js"
+  },
+  "keywords": [
+    "traffic"
+  ],
+  "author": "firaol tolessa",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^5.1.0",
+    "@as-integrations/express5": "^1.1.2",
+    "cors": "^2.8.5",
+    "dataloader": "^2.2.3",
+    "express": "^5.1.0",
+    "express-yup-middleware": "^2.0.0",
+    "graphql": "^16.12.0",
+    "pg": "^8.16.3",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.27",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "nodemon": "^3.1.10"
+  }
+}

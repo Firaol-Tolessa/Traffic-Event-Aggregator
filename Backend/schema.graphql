@@ -1,0 +1,50 @@
+type Event{
+    id: ID!
+    timestamp : String!
+    vehiclePlate : String!
+    vehicleType : String!
+    speed : Float
+    camera: Camera!
+}
+
+type Camera{
+    model : String!
+    location : String!
+    cameraId : String!
+    events: [Event!]!
+}
+
+
+type EventEdge {
+  cursor: String!
+  node: Event!
+}
+
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+}
+  
+type EventConnection {
+  edges: [EventEdge!]!
+  pageInfo: PageInfo!
+}
+
+type Query {
+    getVehicles(first: Int!, after: String): EventConnection!
+    getVehicle(vehiclePlate: String!): [Event!]
+    getCameraById(cameraId: String!): Camera
+    getAggregates: Aggregate!
+
+  }
+
+type Mutation{
+    addCamera (model : String! , location : String!, cameraId : String!) : Camera
+    deleteCamera (cameraId : String!) : Camera
+  }
+
+type Aggregate {
+  totalEvents: Int!
+  avgSpeed: Float
+}
