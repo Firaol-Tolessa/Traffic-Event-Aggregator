@@ -84,7 +84,7 @@ You must start the backend and frontend services in two separate terminals.
     npm run dev
     ```
 3.  Look for this line in the log to confirm the server is running:
-    > **🚀 Server ready at http://localhost:4000/graphql**
+    > **🚀 Server ready at http://localhost:3000/graphql**
 
 ### Step 2: Run the React Dashboard (Frontend)
 
